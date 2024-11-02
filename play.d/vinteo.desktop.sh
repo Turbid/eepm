@@ -11,7 +11,7 @@ URL="https://vinteo.com"
 arch=amd64
 pkgtype=deb
 
-[ "$VERSION" = "*" ] && VERSION="$(eget --list --latest "https://download.vinteo.com/VinteoClient/linux/3.*" | xargs basename)"
+[ "$VERSION" = "*" ] && VERSION="$(eget --list --latest "https://download.vinteo.com/VinteoClient/linux/4.*" | xargs basename)"
 [ -n "$VERSION" ] || fatal "Can't get version"
 
 # use rpm, but not for ALT
@@ -19,10 +19,10 @@ pkgtype=deb
 
 case "$(epm print info -d)" in
   AstraLinux*)
-      PKGURL="https://download.vinteo.com/VinteoClient/linux/$VERSION/astralinux/Vinteo.Desktop-$VERSION-$arch.$pkgtype"
+      PKGURL="https://download.vinteo.com/VinteoClient/linux/$VERSION/astralinux/vinteo-desktop-$VERSION-$arch.$pkgtype"
       ;;
   *)
-      PKGURL="https://download.vinteo.com/VinteoClient/linux/$VERSION/Vinteo.Desktop-$VERSION-$arch.$pkgtype"
+      PKGURL="https://download.vinteo.com/VinteoClient/linux/$VERSION/vinteo-desktop-$VERSION-$arch.$pkgtype"
       ;;
 esac
 
